@@ -1,0 +1,14 @@
+[
+  {
+    "matcher": "packages/apple",
+    "people": ["ashbgames", "MattBarcroft"]
+  },
+  {
+    "matcher": "packages/banana",
+    "people": ["chlo3williams", "Kian-SBG"]
+  },
+  {
+    "matcher": "packages/orange",
+    "people": ["MattBarcroft"]
+  }
+]
