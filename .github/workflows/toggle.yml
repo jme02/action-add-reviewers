@@ -1,0 +1,38 @@
+name: toggle
+on:
+  workflow_dispatch:
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Cache Primes
+        id: cache-primes
+        uses: actions/cache@v4
+        with:
+          path: toggle-state
+          key: toggle-key
+      - name: Print file content
+        run: |
+          FILE=toggle-state
+          if [ -f "$FILE" ]; then
+            cat "$FILE"
+          else
+            echo "$FILE does not exist"
+            echo "Hello, World!" > $FILE
+          fi
+      - name: Toggle file content
+        run: |
+          FILE=toggle-state
+          if [ -f "$FILE" ]; then
+            content=$(cat "$FILE")
+            if [ "$content" = "true" ]; then
+              echo "false" > "$FILE"
+            else
+              echo "true" > "$FILE"
+            fi
+          fi
+      
