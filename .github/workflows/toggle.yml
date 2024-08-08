@@ -5,6 +5,7 @@ on:
 jobs:
   log:
     runs-on: ubuntu-latest
+    permissions: write-all
     env:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
