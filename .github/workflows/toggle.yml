@@ -35,4 +35,8 @@ jobs:
               echo "true" > "$FILE"
             fi
           fi
+      - name: Enforce cache update for a local NX cache
+        run: |
+          STATE_CACHE_KEY="toggle-key"
+          echo "STATE_CACHE_KEY=${STATE_CACHE_KEY}" >> $GITHUB_ENV
       
